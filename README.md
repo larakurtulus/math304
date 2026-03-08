@@ -9,7 +9,7 @@ Bu depo, Nümerik Analiz dersi kapsamında geliştirilen etkileşimli Python alg
 ### 1. Kök Bulma Yöntemleri (Root Finding Methods)
 * [1.1. Bisection (İkiye Bölme) Yöntemi](#11-bisection-method-calculator-)
 * [1.2. Fixed-Point (Sabit Nokta) İterasyonu](#12-fixed-point-iteration-calculator-)
-* *Newton-Raphson Yöntemi (İleride eklenecek)*
+* [1.3. Newton-Raphson Yöntemi](#13-newton-raphson-method-calculator-)
 * *Secant Yöntemi (İleride eklenecek)*
 
 ### 2. Gelecek Konu Başlıkları (Planlanan)
@@ -43,3 +43,16 @@ Doğrusal olmayan f(x) = 0 denklemlerini x = g(x) formuna dönüştürerek tek b
 
 **Nasıl Kullanılır? (Usage):**
 Konsol sizden yeniden düzenlenmiş g(x) denklemini (Örn: `(x+1)**(1/3)`), başlangıç tahminini (Örn: `x0 = 1`) ve hedeflenen toleransı isteyecektir.
+
+---
+
+### 1.3. Newton-Raphson Method Calculator 🚀
+Mühendislik analizlerinde (özellikle yapısal analiz ve sonlu elemanlar yöntemlerinde) en sık kullanılan, **quadratic (ikinci dereceden) yakınsama** hızıyla en güçlü kök bulma algoritmasıdır.
+
+**Özellikler (Features):**
+* **Türev Sıfır Koruması:** Eğimi sıfıra yaklaşan fonksiyonlarda oluşabilecek `division by zero` (sıfıra bölünme) hatalarını engeller.
+* **Çift Durma Kriteri:** Hem yer değiştirme hatasını (relative displacement) hem de kalıntı (residual) toleransını |f(x)| < tol eşzamanlı kontrol eder.
+* **Analitik Türev Girdisi:** Her iterasyonda fonksiyonun türevini anlık olarak sayısal hesaplamak yerine kullanıcıdan formül olarak alır.
+
+**Nasıl Kullanılır? (Usage):**
+Konsol sizden sırasıyla f(x) denklemini (Örn: `x**3 - x - 2`), bu denklemin türevini (Örn: `3*x**2 - 1`), başlangıç tahminini (Örn: `x0 = 1.5`) ve hedeflenen toleransı isteyecektir.
