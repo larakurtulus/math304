@@ -11,6 +11,7 @@ Bu depo, Nümerik Analiz dersi kapsamında geliştirilen etkileşimli Python alg
 * [1.2. Fixed-Point (Sabit Nokta) İterasyonu](#12-fixed-point-iteration-calculator-)
 * [1.3. Newton-Raphson Yöntemi](#13-newton-raphson-method-calculator-)
 * [1.4. Secant (Kiriş) Yöntemi](#14-secant-method-calculator-)
+* [1.5. Regula Falsi (False Position) Yöntemi](#15-regula-falsi-false-position-method-calculator-)
 
 ### 2. Gelecek Konu Başlıkları (Planlanan)
 * *Doğrusal Denklem Sistemleri (Linear Systems)*
@@ -69,3 +70,16 @@ Newton yöntemine güçlü bir alternatiftir. Analitik türev hesaplamanın zor 
 
 **Nasıl Kullanılır? (Usage):**
 Konsol sizden f(x) denklemini (Örn: `exp(x) - 3`), iki farklı başlangıç tahminini (Örn: `x0 = 0`, `x1 = 2`) ve hata toleransını isteyecektir.
+
+---
+
+### 1.5. Regula Falsi (False Position) Method Calculator 📏
+Bisection yönteminin garantili kök bulma (bracketing) özelliği ile lineer interpolasyonun (doğrusal tahmin) hızını birleştiren gelişmiş bir yöntemdir.
+
+**Özellikler (Features):**
+* **Akıllı Tahmin (Linear Interpolation):** Aralığı körü körüne ikiye bölmek yerine, fonksiyon değerlerinin büyüklüğüne göre kök noktasını orantısal olarak tahmin eder.
+* **Uç Nokta Durgunluğu (Endpoint Stagnation) Uyarısı:** İterasyon sırasında aralığın bir ucunun sabit kalıp yöntemi yavaşlattığı durumları tespit eder ve uyarır.
+* **Garanti Yakınsama:** Kök başlangıçta doğru aralıkta (bracketed) ise, yöntemin kökü bulması matematiksel olarak garantidir.
+
+**Nasıl Kullanılır? (Usage):**
+Konsol sizden f(x) denklemini (Örn: `x**2 - 4`), kökü kapsayan alt ve üst sınırları (Örn: `a = 0`, `b = 3`) ve hata toleransını isteyecektir.
