@@ -10,7 +10,7 @@ Bu depo, Nümerik Analiz dersi kapsamında geliştirilen etkileşimli Python alg
 * [1.1. Bisection (İkiye Bölme) Yöntemi](#11-bisection-method-calculator-)
 * [1.2. Fixed-Point (Sabit Nokta) İterasyonu](#12-fixed-point-iteration-calculator-)
 * [1.3. Newton-Raphson Yöntemi](#13-newton-raphson-method-calculator-)
-* *Secant Yöntemi (İleride eklenecek)*
+* [1.4. Secant (Kiriş) Yöntemi](#14-secant-method-calculator-)
 
 ### 2. Gelecek Konu Başlıkları (Planlanan)
 * *Doğrusal Denklem Sistemleri (Linear Systems)*
@@ -47,12 +47,25 @@ Konsol sizden yeniden düzenlenmiş g(x) denklemini (Örn: `(x+1)**(1/3)`), baş
 ---
 
 ### 1.3. Newton-Raphson Method Calculator 🚀
-Mühendislik analizlerinde (özellikle yapısal analiz ve sonlu elemanlar yöntemlerinde) en sık kullanılan, **quadratic (ikinci dereceden) yakınsama** hızıyla en güçlü kök bulma algoritmasıdır.
+Doğrusal olmayan denklemleri çözmek için en güçlü ve hızlı (quadratic convergence) yöntemlerden biridir. Her adımda fonksiyona teğet çizerek köke yaklaşır.
 
 **Özellikler (Features):**
-* **Türev Sıfır Koruması:** Eğimi sıfıra yaklaşan fonksiyonlarda oluşabilecek `division by zero` (sıfıra bölünme) hatalarını engeller.
-* **Çift Durma Kriteri:** Hem yer değiştirme hatasını (relative displacement) hem de kalıntı (residual) toleransını |f(x)| < tol eşzamanlı kontrol eder.
-* **Analitik Türev Girdisi:** Her iterasyonda fonksiyonun türevini anlık olarak sayısal hesaplamak yerine kullanıcıdan formül olarak alır.
+* **Hızlı Yakınsama:** Kök etrafında quadratik (ikinci dereceden) hızla yakınsar.
+* **Türev Kontrolü:** Türevin sıfır olduğu noktalarda (division by zero) programın çökmesini engeller.
+* **Çift Durma Kriteri:** Hem yer değiştirme (relative displacement) hem de kalıntı (residual) toleranslarını eşzamanlı kontrol eder.
 
 **Nasıl Kullanılır? (Usage):**
-Konsol sizden sırasıyla f(x) denklemini (Örn: `x**3 - x - 2`), bu denklemin türevini (Örn: `3*x**2 - 1`), başlangıç tahminini (Örn: `x0 = 1.5`) ve hedeflenen toleransı isteyecektir.
+Konsol sizden f(x) denklemini (Örn: `x**3 - x - 2`), bu denklemin türevini olan f'(x)'i (Örn: `3*x**2 - 1`), başlangıç tahminini (`x0`) ve hata toleransını isteyecektir.
+
+---
+
+### 1.4. Secant Method Calculator 🌉
+Newton yöntemine güçlü bir alternatiftir. Analitik türev hesaplamanın zor veya imkansız olduğu durumlarda, türev yerine son iki noktayı birleştiren bir doğru (secant line) kullanarak kökü bulur.
+
+**Özellikler (Features):**
+* **Türevsiz Çalışma:** Fonksiyonun türevini gerektirmez (Derivative-free).
+* **Altın Oran Hızı:** Bisection'dan hızlı, Newton'dan biraz yavaş olan yaklaşık 1.618 (Altın Oran) derecesiyle yakınsar.
+* **Payda Koruması:** f(x_n) ile f(x_{n-1}) değerlerinin birbirine çok yaklaştığı durumlarda sıfıra bölünme hatasını engeller.
+
+**Nasıl Kullanılır? (Usage):**
+Konsol sizden f(x) denklemini (Örn: `exp(x) - 3`), iki farklı başlangıç tahminini (Örn: `x0 = 0`, `x1 = 2`) ve hata toleransını isteyecektir.
